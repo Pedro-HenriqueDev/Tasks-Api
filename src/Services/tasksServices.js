@@ -63,7 +63,7 @@ const updateTask = async(idTask, task) => {
 
 const filterTask = async(conteudo) => {
     try {
-        const [filter] = await connection.execute(`SELECT * FROM todolist.tasks WHERE title LIKE '%${conteudo}%';`);
+        const [filter] = await connection.execute(`SELECT * FROM tasks WHERE title LIKE '%${conteudo}%';`);
         return {status: 200, message: filter};
     } catch(err) {
         console.log(err);
