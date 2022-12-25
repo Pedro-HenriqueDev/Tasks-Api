@@ -1,5 +1,9 @@
 const tasksServices = require("../Services/tasksServices");
 
+const home = async(req,res) => {
+    res.status(200).json("API Lista toodos")
+}
+
 const getAll = async(req,res) => {
     const tasks = await tasksServices.getAll()
     res.status(200).json(tasks)
@@ -44,6 +48,7 @@ const filterTask = async(req,res) => {
 
 
 module.exports = {
+    home,
     getAll,
     createTask,
     deleteTask,
